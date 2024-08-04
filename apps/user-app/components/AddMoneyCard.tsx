@@ -16,7 +16,7 @@ const SUPPORTED_BANKS = [{
 }];
 
 export const AddMoney = () => {
-    const [redirectUrl, setRedirectUrl] = useState(SUPPORTED_BANKS[0]?.redirectUrl);
+    const [rdirectUrl, setRedirectUrl] = useState(SUPPORTED_BANKS[0]?.redirectUrl);
     const [amount, setAmount] = useState(0);
     const [provider, setProvider] = useState(SUPPORTED_BANKS[0]?.name || "");
 
@@ -28,7 +28,7 @@ export const AddMoney = () => {
         <div className="py-4 text-left">
             Bank
         </div>
-        <Select onSelect={(value) => {
+        <Select onSelet={(value) => {
             setRedirectUrl(SUPPORTED_BANKS.find(x => x.name === value)?.redirectUrl || "")
             setProvider(SUPPORTED_BANKS.find(x => x.name === value)?.name || "")
         }} options={SUPPORTED_BANKS.map(x => ({
